@@ -69,3 +69,36 @@ def getIntensity():
     # print(randomIntensity)
     return randomIntensity
 
+def getCase():
+    print(f"Get all case from pool")
+    print()
+    with open('usage_data.csv', newline='') as f:
+        reader = csv.reader(f)
+        uc = next(reader) # get uc list from csv row 0
+        del uc[0]
+    # print(uc)
+def getStatus():
+    print(f"Get status code")
+    print()
+    liststatus = ['success',\
+        'error',\
+        'success',\
+        'success',\
+        'success',\
+        'success']
+    # print(liststatus) # i was too lazy to come up with something, so im did so =)
+    return liststatus
+
+def getTime():
+    timelist = []
+    counthour = -1
+    countMin = -1
+    while counthour <= 23:
+        counthour = counthour + 1
+        timelist.append(f'{counthour}:')
+    print(timelist)
+getDate()
+getIntensity()
+getCase()
+getStatus()
+getTime()
