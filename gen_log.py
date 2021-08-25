@@ -55,3 +55,17 @@ def getDate():
 
     return datepool,floatNumMonth
 
+def getIntensity():
+
+    print(f"Get intensity")
+    print()
+    intenRows = pd.read_csv(path,\
+    dtype=float,\
+    skiprows=fisrtRow,\
+    nrows=SecondRow,\
+    usecols=[1,2,3,4,5,6,7,8],\
+    delimiter=',')
+    randomIntensity = intenRows.values.tolist()
+    # print(randomIntensity)
+    return randomIntensity
+
