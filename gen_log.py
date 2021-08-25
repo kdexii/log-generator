@@ -17,9 +17,11 @@ fisrtRow = 5834 # first date month (example: 01.09.2019)
 
 SecondRow = 8763 # end date month (example: 31.12.2019)
 
-path = 'usage_data.csv' # full path to file or or upload to the script folder
+path = 'data.csv' # full path to file or or upload to the script folder
 
 pathToTime = 'time' # full path to file or or upload to the script folder
+
+outputLog = 'logs.txt'
 
 #
 ##  -------------------------------------------------------------------------
@@ -74,7 +76,7 @@ def getIntensity():
 def getCase():
     print(f"Get all case from pool")
     print()
-    with open('usage_data.csv', newline='') as f:
+    with open(path, newline='') as f:
         reader = csv.reader(f)
         uc = next(reader) # get uc list from csv row 0
         del uc[0]
@@ -178,11 +180,11 @@ def pushAnotherListToList(randomIntensity,timeRange,uc,datepool,liststatus):
     'case':listuc,\
     'status': status\
     })
-    DataFrameList.to_csv('logs.txt', index=False) # ez, all massive to log file with format .txt
+    DataFrameList.to_csv(outputLog, index=False) # ez, all massive to log file with format .txt
 
 
     print(f"Formatting file..")
-    fileForFormat = "logs.txt"
+    fileForFormat = outputLog
 
     formatFile = open(fileForFormat, "r")
     x = formatFile.read()
