@@ -11,3 +11,4 @@
 4. $ python3 trash.py
 5. $ gen_log.py
 6. end.
+7. qa-profile
